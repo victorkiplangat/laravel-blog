@@ -1,0 +1,35 @@
+body {
+    background-color: #fff;
+    color: #222;
+    margin: auto;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+article+article {
+    border-top: 2px solid #cdd;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #222;
+}
+
+.post-excerpt {
+    font-size: 1.2em;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.post-date {
+    color: navy;
+    font-size: 0.9;
+    text-align: right;
+}
+
+.post-category {
+    text-transform: uppercase;
+}
