@@ -7,6 +7,8 @@ use App\Models\Post;
 use App\Models\User;
 use Illuminate\Auth\Events\Verified;
 use Illuminate\Http\Request;
+use Illuminate\support\Facades\Auth;
+
 
 class PostController extends Controller
 {
@@ -18,9 +20,13 @@ class PostController extends Controller
     }
     public function show(Post $post)
     {
-        return view("posts.show", [
-         'post'=> $post
-     ]);
+        if(Auth::check()){
+            return view("posts.show", [
+                'post'=> $post
+            ]);
+        }
+        return view("auth.no_auth");
+        
     }
     public function category(Category $category)
     {

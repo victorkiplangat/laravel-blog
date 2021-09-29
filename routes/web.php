@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\Sessioncontroller;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
@@ -29,7 +30,21 @@ Route::get(
     [AuthController::class, 'create']
 );
 
+Route::post(
+    '/register',
+    [AuthController::class, 'store']
+);
+
+
 Route::get(
     '/login',
     [AuthController::class, 'login']
+);
+Route::post(
+    '/logout',
+    [SessionController::class, 'destroy']
+);
+Route::post(
+    '/login',
+    [SessionController::class, 'create']
 );
